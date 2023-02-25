@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import { UserPlusIcon } from '@heroicons/react/24/outline'
 
 import { State } from '../redux'
 import User from '../components/User'
@@ -21,11 +22,12 @@ const Users: React.FC = () => {
   return (
     <div className='w-[300px] md:w-[648px] lg:w-[996px] mx-auto py-10'>
       <div className='flex justify-between items-center mb-10'>
-        <h1 className='text-3xl md:text-4xl lg:text-5xl font-bold'>Users</h1>
+        <h1 className='text-3xl md:text-4xl font-bold'>Users</h1>
         <button
-          className='text-white bg-orange-500 py-2 px-4 rounded-full'
+          className='text-white bg-orange-500 py-2 px-4 rounded-full flex gap-x-3 items-center'
           onClick={() => navigate('/user/create')}
         >
+          <UserPlusIcon className='w-5 h-5' />
           Create User
         </button>
       </div>

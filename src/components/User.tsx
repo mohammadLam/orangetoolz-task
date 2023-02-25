@@ -1,6 +1,8 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
+import { TrashIcon, ArrowPathIcon } from '@heroicons/react/24/outline'
+
 import IUser from '../interface/User'
 import SAGA_ACTIONS from '../redux/sagas/action-type'
 interface Props {
@@ -37,18 +39,18 @@ const User: React.FC<Props> = ({ user }) => {
       </Link>
       <div className='flex gap-x-2'>
         <button
-          className='bg-green-600 text-white px-2 py-1 rounded-full'
+          className='bg-green-600 text-white w-9 h-9 rounded-full flex justify-center items-center'
           onClick={() => navigate(`/user/update/${user.id}`)}
         >
-          Update
+          <ArrowPathIcon className='w-5 h-5' />
         </button>
         <button
-          className='bg-red-600 text-white px-2 py-1 rounded-full'
+          className='bg-red-600 text-white w-9 h-9 rounded-full flex justify-center items-center'
           onClick={() => {
             deleteHandler(user.id)
           }}
         >
-          Delete
+          <TrashIcon className='w-5 h-5' />
         </button>
       </div>
     </div>
